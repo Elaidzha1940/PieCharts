@@ -1,6 +1,12 @@
 iOS 17 introduced the SectorMark to Swift Charts that allows us to create pie charts with ease.
 ===============================================================================================
 
+<img src="https://github.com/Elaidzha1940/PieCharts/assets/64445918/5ffea839-c123-48ce-86c2-499b6c8a6a03" width="130" height="270">
+<img src="" width="130" height="270">
+
+
+
+
 ![Charts5](https://github.com/Elaidzha1940/PieCharts/assets/64445918/5ffea839-c123-48ce-86c2-499b6c8a6a03)
 ![Charts4](https://github.com/Elaidzha1940/PieCharts/assets/64445918/f18010ec-c930-4e3e-9d45-951f7de7d38e)
 ![Charts3](https://github.com/Elaidzha1940/PieCharts/assets/64445918/51509717-505e-4939-b802-912b84ff2ec5)
