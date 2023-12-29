@@ -19,12 +19,19 @@ struct PieCharts: View {
                 Chart {
                     ForEach(MockData.revenueSreams) { stream in
                         SectorMark(angle: .value("Stream", stream.value), 
-                                   //innerRadius: .ratio(0.500),
+                                   innerRadius: .ratio(0.500),
                                    //outerRadius: stream.name == "Courses" ? 200 : 160,
                                    angularInset: 1.0)
                         // SectorMark(angle: .value("Stream", stream.value), angularInset: 3)
-                        //.foregroundStyle(.mint)
-                        .foregroundStyle(by: .value("Name", stream.name))
+                        .foregroundStyle(stream.color)
+                        //.foregroundStyle(by: .value("Name", stream.name))
+                        .cornerRadius(10)
+                        .annotation(position: .overlay) {
+                            Text("$\(Int(stream.value))")
+                                .font(.system(size: 20, weight: .semibold, design: .rounded))
+                                .foregroundStyle(.white)
+                        }
+                        
                     }
                 }
                 .chartLegend(.hidden)
@@ -51,10 +58,10 @@ struct RevenueSream: Identifiable {
 
 struct MockData {
     static var revenueSreams: [RevenueSream] = [
-        .init(name: "Adsense", value: 500, color: .mint),
-        .init(name: "Courses", value: 1500, color: .teal),
-        .init(name: "Cryptocurrency", value: 6500, color: .brown),
-        .init(name: "Sponsors", value: 3500),
-        .init(name: "Cosulting", value: 4500),
+        .init(name: "Adsense", value: 1500, color: .mint),
+        .init(name: "Courses", value: 2500, color: .gray),
+        .init(name: "Cryptocurrency", value: 5500, color: .orange),
+        .init(name: "Sponsors", value: 3500, color: .green),
+        .init(name: "Cosulting", value: 4500, color: .indigo),
     ]
 }
