@@ -18,18 +18,22 @@ struct PieCharts: View {
             VStack {
                 Chart {
                     ForEach(MockData.revenueSreams) { stream in
-                        SectorMark(angle: .value("Stream", stream.value), innerRadius: 100,
-                                   outerRadius: 100,
+                        SectorMark(angle: .value("Stream", stream.value), 
+                                   //innerRadius: .ratio(0.500),
+                                   //outerRadius: stream.name == "Courses" ? 200 : 160,
                                    angularInset: 1.0)
                         // SectorMark(angle: .value("Stream", stream.value), angularInset: 3)
                         //.foregroundStyle(.mint)
                         .foregroundStyle(by: .value("Name", stream.name))
                     }
                 }
-                //.chartLegend(.hidden)
+                .chartLegend(.hidden)
+                .frame(width: 350, height: 350)
             }
             .padding()
             .navigationTitle("Revenue")
+            
+            Spacer()
         }
     }
 }
@@ -42,14 +46,15 @@ struct RevenueSream: Identifiable {
     let id = UUID()
     let name: String
     let value: Double
+    let color: Color
 }
 
 struct MockData {
     static var revenueSreams: [RevenueSream] = [
-        .init(name: "Adsense", value: 808),
-        .init(name: "Courses", value: 2500),
-        .init(name: "Sponsors", value: 3460),
-        .init(name: "Cosulting", value: 4900),
-        .init(name: "Cryptocurrency", value: 7500),
+        .init(name: "Adsense", value: 500, color: .mint),
+        .init(name: "Courses", value: 1500, color: .teal),
+        .init(name: "Cryptocurrency", value: 6500, color: .brown),
+        .init(name: "Sponsors", value: 3500),
+        .init(name: "Cosulting", value: 4500),
     ]
 }
