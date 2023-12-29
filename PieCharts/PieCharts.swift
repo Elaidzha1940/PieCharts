@@ -18,7 +18,7 @@ struct PieCharts: View {
             VStack {
                 Chart {
                     ForEach(MockData.revenueSreams) { stream in
-                        SectorMark(angle: .value("Stream", stream.value), 
+                        SectorMark(angle: .value("Stream", stream.value),
                                    innerRadius: .ratio(0.500),
                                    //outerRadius: stream.name == "Courses" ? 200 : 160,
                                    angularInset: 1.0)
